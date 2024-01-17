@@ -15,6 +15,11 @@ function App() {
     <>
       <h1>Display Users data</h1>
       <p>No of Users: {users.length}</p>
+      <div>
+        {
+          users.map(user=><p key={user.id}>{user.id}, {user.name}, {user.email}</p>)
+        }
+      </div>
     </>
   )
 }
