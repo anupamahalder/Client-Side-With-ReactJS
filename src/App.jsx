@@ -19,7 +19,6 @@ function App() {
     // create an object of user 
     const user = {name,email};
     console.log(user);
-    // form.reset();
     fetch('http://localhost:5050/users',{
       method: 'POST',
       headers:{
@@ -30,6 +29,10 @@ function App() {
     .then(res=>res.json())
     .then(data =>{
       console.log(data);
+      // update our state's data 
+      const newUsers = [...users, data];
+      setUsers(newUsers);
+      form.reset();
     })
   }
   return (
