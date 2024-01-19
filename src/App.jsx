@@ -47,15 +47,15 @@ function App() {
       <div style={{backgroundColor: 'pink', color:'black', padding:'20px'}}>
         <h1 style={{paddingBottom:'20px',paddingTop:'20px'}}>Add User</h1>
         <form onSubmit={hanldeAddUser}>
-          <input name='name' type="text" placeholder='Enter your name' /><br />
-          <input name='email' type="email" placeholder='Enter your email' /> <br />
-          <input type="submit" value="Add User" />
+          <input style={{fontSize:'20px', marginBottom:'10px'}} name='name' type="text" placeholder='Enter your name' /><br />
+          <input style={{fontSize:'20px'}} name='email' type="email" placeholder='Enter your email' /> <br />
+          <input style={{fontSize:'20px', marginTop:'10px'}} type="submit" value="Add User" />
         </form>
       </div>
       <p>No of Users: {users.length}</p>
       <div>
         {
-          users.map(user=><p key={user._id}>{user._id}, {user.name}, {user.email}</p>)
+          users.map(user=><p key={user._id}>{user.name}, {user.email}</p>)
         }
       </div>
     </>
