@@ -25,6 +25,10 @@ const Users = () => {
             }
         })
     }
+    // handle update function 
+    const handleUpdate = (_id) =>{
+        console.log(_id);
+    }
     return (
         <div>
             <Link to='/'>Go back to HOME</Link>
@@ -32,7 +36,12 @@ const Users = () => {
             {
                 users.map(user =><p key={user._id}>
                     User Name: {user.name} and 
-                    User Email: {user.email} <button onClick={()=>handleDelete(user._id)}
+                    User Email: {user.email} 
+                    <Link to={`/update/${user._id}`}>
+                        <button onClick={()=>handleUpdate(user._id)}
+                        style={{backgroundColor:'skyblue', color:'black'}}
+                        >Update</button></Link>
+                    <button onClick={()=>handleDelete(user._id)}
                      style={{backgroundColor:'red', fontSize:'15px'}}>X</button></p>)
             }
         </div>
