@@ -32,8 +32,9 @@ function App() {
       if(data.insertedId){
         alert('Users added successfully!');
       }
+      user._id = data.insertedId;
       // update our state's data 
-      const newUsers = [...users, data];
+      const newUsers = [...users, user];
       setUsers(newUsers);
       form.reset();
     })
@@ -41,10 +42,10 @@ function App() {
   return (
     <>
       <h1>Display Users data</h1>
-      <div>
-        <h1>Add User</h1>
+      <div style={{backgroundColor: 'pink', color:'black', padding:'20px'}}>
+        <h1 style={{paddingBottom:'20px',paddingTop:'20px'}}>Add User</h1>
         <form onSubmit={hanldeAddUser}>
-          <input name='name' type="text" placeholder='Enter your name' /><br /><br />
+          <input name='name' type="text" placeholder='Enter your name' /><br />
           <input name='email' type="email" placeholder='Enter your email' /> <br />
           <input type="submit" value="Add User" />
         </form>
@@ -52,7 +53,7 @@ function App() {
       <p>No of Users: {users.length}</p>
       <div>
         {
-          users.map(user=><p key={user.id}>{user.id}, {user.name}, {user.email}</p>)
+          users.map(user=><p key={user._id}>{user._id}, {user.name}, {user.email}</p>)
         }
       </div>
     </>
