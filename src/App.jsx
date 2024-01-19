@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import './App.css'
+import { Link } from 'react-router-dom';
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -41,6 +42,7 @@ function App() {
   }
   return (
     <>
+      <Link to='users'>Go to USERs</Link>
       <h1>Display Users data</h1>
       <div style={{backgroundColor: 'pink', color:'black', padding:'20px'}}>
         <h1 style={{paddingBottom:'20px',paddingTop:'20px'}}>Add User</h1>
